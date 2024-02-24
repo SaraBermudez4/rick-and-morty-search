@@ -30,7 +30,7 @@ export default function RootLayout({
               <div className=' space stars3 absolute inset-0'></div>
             </div>
             <Header />
-            <div className='px-4 md:p-20'>{children}</div>
+            <div className='px-4 pb-8 md:p-20'>{children}</div>
             <Footer />
           </body>
         </html>

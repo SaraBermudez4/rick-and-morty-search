@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter, useSearchParams } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 import { Stack } from '@mui/material'
 import PaginationMUI from '@mui/material/Pagination'
@@ -8,10 +8,13 @@ import PaginationMUI from '@mui/material/Pagination'
 function Pagination({ totalPages }: { totalPages: number }) {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const pathname = usePathname()
   const currentPage = Number(searchParams.get('page')) || 1
 
   const createPageURL = (event: React.ChangeEvent<unknown>, value: number) => {
-    router.push(`?page=${value}`)
+    const params = new URLSearchParams(searchParams)
+    params.set('page', value.toString())
+    router.push(`${pathname}?${params.toString()}`)
   }
   return (
     <Stack spacing={2} className='mt-20 items-center'>

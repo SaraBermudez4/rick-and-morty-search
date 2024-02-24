@@ -11,6 +11,9 @@ export default async function fetchAsync(url: string, options?: RequestInit) {
     return await response.json()
   } else {
     const errorBody = await response.text()
+    if (response.status === 404) {
+      return null
+    }
     throw new Error(`HTTP Error: ${response.status} - ${errorBody}`)
   }
 }

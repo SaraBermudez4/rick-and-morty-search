@@ -41,7 +41,7 @@ export default async function Page({ params }: Props) {
       icon: <Face2Icon />,
       text: (
         <span>
-          <strong>Especie:</strong> {character.species}
+          <strong>Species:</strong> {character.species}
         </span>
       ),
     },
@@ -57,7 +57,7 @@ export default async function Page({ params }: Props) {
         ),
       text: (
         <span>
-          <strong>Estado:</strong> {character.status}
+          <strong>Status:</strong> {character.status}
         </span>
       ),
     },
@@ -73,7 +73,7 @@ export default async function Page({ params }: Props) {
         ),
       text: (
         <span>
-          <strong>Genero:</strong> {character.gender}
+          <strong>Gender:</strong> {character.gender}
         </span>
       ),
     },
@@ -82,7 +82,7 @@ export default async function Page({ params }: Props) {
       icon: <PublicIcon />,
       text: (
         <span>
-          <strong>Origen:</strong> {character.origin.name}
+          <strong>Orgin:</strong> {character.origin.name}
         </span>
       ),
     },
@@ -101,11 +101,11 @@ export default async function Page({ params }: Props) {
               width={400}
               height={400}
               alt={character.name}
-              className='rounded-l-3xl '
+              className='rounded-3xl '
             />
           </div>
 
-          <div className='flex flex-col items-center'>
+          <div className='flex flex-col items-center text-center'>
             <div>
               <FavoriteButton idCharacter={character.id} />
             </div>

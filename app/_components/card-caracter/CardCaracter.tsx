@@ -29,7 +29,7 @@ export default function CardCaracter({ character }: CardCaracterProps) {
           <FavoriteButton idCharacter={character.id} />
         </div>
         <Typography gutterBottom variant='h6' component='div'>
-          <strong>Nombre:</strong> {character.name}
+          <strong>Name:</strong> {character.name}
         </Typography>
         <Link href={`/character/${character.id}`}>
           <Button
@@ -38,7 +38,7 @@ export default function CardCaracter({ character }: CardCaracterProps) {
             className={
               'rounded-xl border-[#42b5cb] bg-[#42b5cb] text-black hover:border-[#c0df44] hover:bg-[#c0df44] hover:text-black'
             }>
-            Ver personaje
+            View character
           </Button>
         </Link>
       </CardContent>

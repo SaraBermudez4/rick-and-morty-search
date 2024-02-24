@@ -7,17 +7,17 @@ import fetchAsync from '@helpers/utils/fetchAsync'
  * @param name - The name of the character to search for.
  * @returns A Promise that resolves to the first character found with the specified name.
  */
-const getCharacterByName = async (name: string) => {
+const getCharacterByName = async (name: string, page: string) => {
   const characters = await fetchAsync(
-    `https://rickandmortyapi.com/api/character/?name=${name}`
+    `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}`
   )
-  return characters.results[0]
+  return characters
 }
 
-const useGetCharacterByName = (name: string) => {
+const useGetCharacterByName = (name: string, page: string) => {
   return useQuery({
     queryKey: ['character', name],
-    queryFn: () => getCharacterByName(name),
+    queryFn: () => getCharacterByName(name, page),
   })
 }
 
