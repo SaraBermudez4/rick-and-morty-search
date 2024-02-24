@@ -10,7 +10,6 @@ import { characterType } from '@helpers/types'
 
 import NotFound from '@images/404.webp'
 import { Container } from '@mui/material'
-import SearchInput from '@components/inputs/SearchInput'
 
 interface ListCharacterProps {
   characters: characterType[]
@@ -35,13 +34,10 @@ export default function ListCharacter({ characters }: ListCharacterProps) {
           </div>
         </Container>
       ) : (
-        <div className='flex flex-col gap-8'>
-          <SearchInput placeholder='Search characters...' />
-          <div className='auto-grid grid gap-8'>
-            {filteredCharacters.map(character => (
-              <CardCaracter key={character.id} character={character} />
-            ))}
-          </div>
+        <div className='auto-grid grid gap-8'>
+          {filteredCharacters.map(character => (
+            <CardCaracter key={character.id} character={character} />
+          ))}
         </div>
       )}
     </>
